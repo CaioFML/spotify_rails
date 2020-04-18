@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import React, { Fragment, useEffect, useState } from 'react';
 import SearchBar from './search_bar';
 import Categories from '../common/categories';
 import { Columns } from 'react-bulma-components';
@@ -29,12 +28,11 @@ const Search = () => {
     <Fragment>
       <Columns>
         <Columns.Column desktop={{ size: 6, offset: 3 }} mobile={{ size: 12 }}>
-          <SearchBar />
+          <SearchBar fetchSearch={fetchSearch} />
         </Columns.Column>
       </Columns>
 
-      <Categories />
-
+      <Categories fetchCategorySearch={fetchCategorySearch} />
     </Fragment>
   );
 }
