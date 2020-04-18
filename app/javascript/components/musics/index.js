@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Button, Columns } from 'react-bulma-components';
 import styled from 'styled-components';
 import Music from './music';
@@ -8,6 +8,20 @@ const PlaySequenceButton = styled(Button)`
 `
 
 const Musics = (props) => {
+  const [songs, setSongs] = useState([]);
+  const [playing, setPlaying] = useState([]);
+
+  useEffect(() => {
+    setSongs(props.songs.map((song, key) =>
+      <Music
+        song={song}
+        playing={playing.id == song.id}
+        setPlaying={setPlaying}
+        key={key}
+      />
+    ));
+  }, [props.songs, playing]);
+
   return (
     <Fragment>
       <Columns className='is-mobile is-centered'>
@@ -17,9 +31,7 @@ const Musics = (props) => {
           </PlaySequenceButton>
         </Columns.Column>
       </Columns>
-      <Music/>
-      <Music/>
-      <Music/>
+      {songs}
     </Fragment>
   );
 }
