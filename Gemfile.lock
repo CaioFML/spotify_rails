@@ -107,6 +107,8 @@ GEM
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -155,6 +157,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -202,8 +206,10 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.2, >= 6.0.2.2)
   sass-rails (>= 6)
+  serviceworker-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
